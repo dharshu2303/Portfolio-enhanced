@@ -101,6 +101,13 @@ export default function Navbar() {
               Certifications
             </a>
             <a
+              href="#awards"
+              onClick={(e) => scrollToSection(e, '#awards')}
+              className="text-white hover:text-neon-blue transition-colors duration-300 font-medium"
+            >
+              Awards
+            </a>
+            <a
               href="#contact"
               onClick={(e) => scrollToSection(e, '#contact')}
               className="btn-neon"
@@ -164,6 +171,13 @@ export default function Navbar() {
                 className="text-white hover:text-neon-blue transition-colors duration-300"
               >
                 Certifications
+              </a>
+              <a
+                href="#awards"
+                onClick={(e) => scrollToSection(e, '#awards')}
+                className="text-white hover:text-neon-blue transition-colors duration-300"
+              >
+                Awards
               </a>
               <a
                 href="#contact"

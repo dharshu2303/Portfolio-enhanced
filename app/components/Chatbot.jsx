@@ -31,8 +31,18 @@ export default function Chatbot() {
     setInput('')
     setIsTyping(true)
 
+    // Timeout wrapper for fetch
+    const fetchWithTimeout = (url, options, timeout = 10000) => {
+      return Promise.race([
+        fetch(url, options),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('Request timeout')), timeout)
+        )
+      ])
+    }
+
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetchWithTimeout('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -52,6 +62,7 @@ export default function Chatbot() {
       }
     } catch (error) {
       console.error('Chat error:', error)
+      // Use fallback for network errors or timeout
       setMessages(prev => [...prev, {
         role: 'assistant',
         content: getFallbackResponse(input)

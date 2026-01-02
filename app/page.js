@@ -10,6 +10,7 @@ import Projects from './components/Projects'
 import WhyHireMe from './components/WhyHireMe'
 import Education from './components/Education'
 import Certifications from './components/Certifications'
+import Awards from './components/Awards'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Chatbot from './components/Chatbot'
@@ -79,6 +80,7 @@ export default function Home() {
       <WhyHireMe />
       <Education />
       <Certifications />
+      <Awards />
       <Contact />
       <Footer />
       <Chatbot />
