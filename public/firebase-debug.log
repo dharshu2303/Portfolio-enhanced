@@ -1,0 +1,74 @@
+[debug] [2025-08-14T09:01:59.220Z] ----------------------------------------------------------------------
+[debug] [2025-08-14T09:01:59.223Z] Command:       D:\node.exe C:\Users\Dharshini's lap\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-08-14T09:01:59.223Z] CLI Version:   14.12.0
+[debug] [2025-08-14T09:01:59.224Z] Platform:      win32
+[debug] [2025-08-14T09:01:59.224Z] Node Version:  v22.17.1
+[debug] [2025-08-14T09:01:59.224Z] Time:          Thu Aug 14 2025 14:31:59 GMT+0530 (India Standard Time)
+[debug] [2025-08-14T09:01:59.224Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-14T09:01:59.231Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-14T09:01:59.232Z] > authorizing via signed-in user (dharshinipriya.a426@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\xampp\htdocs\portfolio
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2025-08-14T09:07:26.918Z] Checked if tokens are valid: true, expires at: 1755165010004
+[debug] [2025-08-14T09:07:26.919Z] Checked if tokens are valid: true, expires at: 1755165010004
+[debug] [2025-08-14T09:07:26.922Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1/projects:checkProjectId [none]
+[debug] [2025-08-14T09:07:26.922Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"proposedId":"dharshini"}
+[debug] [2025-08-14T09:07:30.674Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1/projects:checkProjectId 200
+[debug] [2025-08-14T09:07:30.674Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"projectIdStatus":"PROJECT_ID_UNAVAILABLE","suggestedProjectId":"dharshini-52baa"}
+[debug] [2025-08-14T09:07:38.863Z] Checked if tokens are valid: true, expires at: 1755165010004
+[debug] [2025-08-14T09:07:38.863Z] Checked if tokens are valid: true, expires at: 1755165010004
+[debug] [2025-08-14T09:07:38.864Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1/projects:checkProjectId [none]
+[debug] [2025-08-14T09:07:38.864Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"proposedId":"dharshini87980"}
+[debug] [2025-08-14T09:07:40.432Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1/projects:checkProjectId 200
+[debug] [2025-08-14T09:07:40.433Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1/projects:checkProjectId {"projectIdStatus":"PROJECT_ID_AVAILABLE","suggestedProjectId":"dharshini87980"}
+[debug] [2025-08-14T09:07:45.128Z] Checked if tokens are valid: true, expires at: 1755165010004
+[debug] [2025-08-14T09:07:45.128Z] Checked if tokens are valid: true, expires at: 1755165010004
+[debug] [2025-08-14T09:07:45.128Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2025-08-14T09:07:45.128Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"dharshini87980","name":"dharshini87980"}
+[debug] [2025-08-14T09:07:48.303Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 200
+[debug] [2025-08-14T09:07:48.303Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"name":"operations/create_project.global.4734403369889677917"}
+[debug] [2025-08-14T09:07:48.305Z] Checked if tokens are valid: true, expires at: 1755165010004
+[debug] [2025-08-14T09:07:48.306Z] Checked if tokens are valid: true, expires at: 1755165010004
+[debug] [2025-08-14T09:07:48.306Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.4734403369889677917 [none]
+[debug] [2025-08-14T09:07:49.724Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.4734403369889677917 200
+[debug] [2025-08-14T09:07:49.724Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.4734403369889677917 {"name":"operations/create_project.global.4734403369889677917"}
+[debug] [2025-08-14T09:07:50.236Z] [Project Creation Poller] Retrying task index 0
+[debug] [2025-08-14T09:07:50.237Z] Checked if tokens are valid: true, expires at: 1755165010004
+[debug] [2025-08-14T09:07:50.237Z] Checked if tokens are valid: true, expires at: 1755165010004
+[debug] [2025-08-14T09:07:50.238Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.4734403369889677917 [none]
+[debug] [2025-08-14T09:07:50.747Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.4734403369889677917 200
+[debug] [2025-08-14T09:07:50.747Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/create_project.global.4734403369889677917 {"name":"operations/create_project.global.4734403369889677917","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","gettable":true,"ready":true},"done":true,"response":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.Project","projectNumber":"202494075075","projectId":"dharshini87980","lifecycleState":"ACTIVE","name":"dharshini87980","createTime":"2025-08-14T09:08:48.560932Z"}}
+[debug] [2025-08-14T09:07:50.750Z] Checked if tokens are valid: true, expires at: 1755165010004
+[debug] [2025-08-14T09:07:50.750Z] Checked if tokens are valid: true, expires at: 1755165010004
+[debug] [2025-08-14T09:07:50.751Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/dharshini87980:addFirebase [none]
+[debug] [2025-08-14T09:07:53.127Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/dharshini87980:addFirebase 403
+[debug] [2025-08-14T09:07:53.127Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/dharshini87980:addFirebase {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-08-14T09:07:53.129Z] Request to https://firebase.googleapis.com/v1beta1/projects/dharshini87980:addFirebase had HTTP Error: 403, The caller does not have permission
+[debug] [2025-08-14T09:07:55.456Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/dharshini87980:addFirebase had HTTP Error: 403, The caller does not have permission
+    at responseToError (C:\Users\Dharshini's lap\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:52:12)
+    at RetryOperation._fn (C:\Users\Dharshini's lap\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to add Firebase to Google Cloud Platform project. See firebase-debug.log for more info.

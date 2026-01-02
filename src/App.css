@@ -1,0 +1,703 @@
+/* Your entire style.css content goes here */
+:root {
+  --neon-blue: #0a67a1;
+  --neon-pink: #FF00F5;
+  --neon-purple: rgb(220, 129, 250);
+  --neon-green: #00FF57;
+  --neon-red: #ec0f0f;
+  --neon-dark-blue: rgb(3, 24, 75);
+  --neon-yellow: #d0ed4d;
+  --dark-bg: #0A0A0A;
+  --darker-bg: #050505;
+  --card-bg: #111111;
+  --text-color: rgba(255, 255, 255, 0.9);
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: var(--dark-bg);
+}
+.glow {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 66px;
+    background: linear-gradient(to top, rgba(0, 102, 255, 0.4), transparent);
+    z-index: 4;
+
+}
+
+body {
+    background-color: var(--dark-bg);
+    background: linear-gradient(to right, #023010, #344b3c);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+hr {
+    height: 15px;
+    color: white;
+}
+
+.neon-text {
+    text-shadow: 0 0 5px var(--neon-blue),
+        0 0 10px var(--neon-blue);
+    color: white;
+    animation: neon-pulse 2s infinite alternate;
+}
+
+.neon-pink {
+    text-shadow: 0 0 5px var(--neon-pink),
+        0 0 10px var(--neon-pink);
+    animation: neon-pulse-pink 2s infinite alternate;
+}
+
+.neon-green {
+    text-shadow: 0 0 5px var(--neon-green),
+        0 0 10px var(--neon-green);
+    animation: neon-pulse-green 2s infinite alternate;
+}
+
+.neon-blue {
+    text-shadow: 0 0 5px var(--neon-blue),
+        0 0 10px var(--neon-blue);
+    animation: neon-pulse-blue 2s infinite alternate;
+
+}
+
+.neon-dark-blue {
+    text-shadow: 0 0 5px var(--neon-dark-blue),
+        0 0 10px var(--neon-dark-blue);
+    animation: neon-pulse-dark-blue 2s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from {
+        text-shadow: 0 0 5px var(--neon-blue),
+            0 0 10px var(--neon-blue);
+    }
+
+    to {
+        text-shadow: 0 0 10px var(--neon-blue),
+            0 0 20px var(--neon-blue),
+            0 0 30px var(--neon-blue);
+    }
+}
+
+@keyframes neon-pulse-pink {
+    from {
+        text-shadow: 0 0 5px var(--neon-pink),
+            0 0 10px var(--neon-pink);
+    }
+
+    to {
+        text-shadow: 0 0 10px var(--neon-pink),
+            0 0 20px var(--neon-pink),
+            0 0 30px var(--neon-pink);
+    }
+}
+
+@keyframes neon-pulse-green {
+    from {
+        text-shadow: 0 0 5px var(--neon-green),
+            0 0 10px var(--neon-green);
+    }
+
+    to {
+        text-shadow: 0 0 10px var(--neon-green),
+            0 0 20px var(--neon-green),
+            0 0 30px var(--neon-green);
+    }
+}
+
+@keyframes neon-pulse-purple {
+    from {
+        text-shadow: 0 0 5px var(--neon-purple),
+            0 0 10px var(--neon-purple);
+    }
+
+    to {
+        text-shadow: 0 0 10px var(--neon-purple),
+            0 0 20px var(--neon-purple),
+            0 0 30px var(--neon-purple);
+    }
+}
+
+section {
+    padding: 100px 0;
+    position: relative;
+}
+
+/* Centered section title + centered glowing underline */
+
+/* Remove any hard-coded left offsets you had (e.g. margin-left: 700px).
+   Use this rule instead to center heading and the underline */
+.section-title {
+  position: relative;
+  display: block;
+  margin: 0 0 40px;       /* spacing below the heading */
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;     /* center the heading text */
+}
+
+/* Centered glowing bar under the heading.
+   We use a block pseudo-element and auto margins so it is centered under the text. */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 220px;           /* length of the glow bar (adjust as desired) */
+  max-width: 60%;         /* cap it responsively */
+  height: 3px;
+  margin: 12px auto 0;    /* centers the bar under the heading */
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+  border-radius: 3px;
+  animation: underline-glow 2s infinite alternate;
+}
+
+/* Glow keyframes (keep your existing animation) */
+@keyframes underline-glow {
+  from {
+    box-shadow: 0 0 5px var(--neon-blue),
+                0 0 10px var(--neon-pink);
+  }
+  to {
+    box-shadow: 0 0 10px var(--neon-blue),
+                0 0 20px var(--neon-pink),
+                0 0 30px var(--neon-purple);
+  }
+}
+
+/* Mobile adjustments: smaller font and shorter bar */
+@media (max-width: 767.98px) {
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+  .section-title::after {
+    width: 140px;
+  }
+}
+
+/* If you want the bar to exactly match the text width (not a fixed bar), see note below */
+/* If you want the bar to exactly match the text width (not a fixed bar), see note below */
+#hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(0, 245, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 245, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 20%, rgba(0, 255, 87, 0.1) 0%, transparent 50%);
+    animation: float 15s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-10px, -10px);
+    }
+
+    100% {
+        transform: translate(10px, 10px);
+    }
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px var(--neon-blue),
+        inset 0 0 20px var(--neon-blue);
+    animation: profile-glow 3s infinite alternate;
+    transition: transform 0.3s;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--neon-blue),
+        inset 0 0 30px var(--neon-blue),
+        0 0 40px var(--neon-pink);
+}
+
+@keyframes profile-glow {
+    from {
+        box-shadow: 0 0 10px var(--neon-blue),
+            inset 0 0 10px var(--neon-blue);
+    }
+
+    to {
+        box-shadow: 0 0 20px var(--neon-blue),
+            inset 0 0 20px var(--neon-blue),
+            0 0 30px var(--neon-pink);
+    }
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--dark-bg), var(--neon-dark-blue), var(--neon-blue), rgb(142, 233, 230));
+    z-index: -1;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.text-muted {
+    color: white;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover::before {
+    opacity: 1;
+    animation: card-glow 2s infinite alternate;
+}
+
+@keyframes card-glow {
+    from {
+        filter: blur(2px);
+    }
+
+    to {
+        filter: blur(4px);
+    }
+}
+
+.card-title {
+    color: white;
+    font-weight: 600;
+}
+
+.card-text {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: white;
+    font-weight: 500;
+}
+.skill-bar {
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+  border-radius: 5px;
+  width: 0;
+  transition: width 1.5s ease-in-out;
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.skill-progress.animate {
+  width: var(--target-width);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .col-lg-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .mt-lg-0 {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--neon-blue), var(--neon-pink));
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(17, 17, 17, 0.7);
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.timeline-item:hover {
+    background-color: var(--card-bg);
+    transform: translateX(5px);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 25px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+    animation: dot-pulse 2s infinite;
+}
+
+@keyframes dot-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 245, 255, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 245, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 245, 255, 0);
+    }
+}
+
+.btn-neon {
+    background: transparent;
+    color: white;
+    border: 2px solid var(--neon-blue);
+    border-radius: 30px;
+    padding: 10px 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    z-index: 1;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.btn-neon::before {
+    content: '';
+    color: white;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+    transition: all 0.5s;
+    z-index: -1;
+}
+
+.btn-neon:hover {
+    color: white;
+    text-shadow: none;
+    box-shadow: 0 0 10px var(--neon-blue),
+        0 0 20px var(--neon-blue);
+}
+
+.btn-neon:hover::before {
+    left: 100%;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 5px;
+    padding: 12px 15px;
+    transition: all 0.3s;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+    color: white;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.social-icon:hover {
+    color: var(--neon-blue);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 245, 255, 0.5);
+    border-color: var(--neon-blue);
+    background-color: rgba(0, 245, 255, 0.1);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+.scroll-down i {
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) translateX(-50%);
+    }
+
+    40% {
+        transform: translateY(-20px) translateX(-50%);
+    }
+
+    60% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.badge {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 5px 10px;
+    background-color: rgba(0, 245, 255, 0.1) !important;
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: white;
+    font-weight: 600;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.text-muted {
+    color: rgba(244, 241, 241, 0.899) !important;
+}
+
+
+.fa-2x,
+.fa-3x {
+    filter: drop-shadow(0 0 5px currentColor);
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .btn-neon {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+.certifications-slider {
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.certifications-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+}
+
+.certification-card {
+    min-width: 300px;
+    background: rgba(20, 20, 20, 0.7);
+    border-radius: 10px;
+    padding: 30px;
+    border: 1px solid rgba(0, 245, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 245, 255, 0.2);
+    border-color: var(--neon-blue);
+}
+
+.certification-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 245, 255, 0.1);
+    border: 1px solid var(--neon-blue);
+}
+
+.certification-logo i {
+    font-size: 2rem;
+    color: var(--neon-blue);
+}
+
+.certification-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--neon-blue);
+    text-align: center;
+}
+
+.certification-issuer {
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.certification-date {
+    color: var(--neon-green);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slider-dot.active {
+    background: var(--neon-blue);
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .certification-card {
+        min-width: 250px;
+    }
+}
