@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-blue: #0a67a1;
+  --neon-pink: #FF00F5;
+  --neon-purple: rgb(220, 129, 250);
+  --neon-green: #00FF57;
+  --neon-red: #ec0f0f;
+  --neon-dark-blue: rgb(3, 24, 75);
+  --neon-yellow: #d0ed4d;
+  --dark-bg: #0A0A0A;
+  --darker-bg: #050505;
+  --card-bg: #111111;
+  --text-color: rgba(255, 255, 255, 0.9);
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--dark-bg);
+}
+
+.glow {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 66px;
+  background: linear-gradient(to top, rgba(0, 102, 255, 0.4), transparent);
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* Section styles */
+section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
+/* Card styles */
+.card {
+  background: rgba(17, 17, 17, 0.8);
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  border-color: rgba(0, 245, 255, 0.6);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+  transform: translateY(-5px);
+}
+
+/* Button styles */
+.btn-neon {
+  background: linear-gradient(135deg, #0a67a1, #00F5FF);
+  border: 2px solid #00F5FF;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+}
+
+.btn-neon:hover {
+  background: linear-gradient(135deg, #00F5FF, #0a67a1);
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.6);
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* Profile image */
+.profile-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 3px solid #00F5FF;
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+  object-fit: cover;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Skill bar */
+.skill-bar {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  height: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #0a67a1, #00F5FF);
+  border-radius: 10px;
+  transition: width 1.5s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+}
+
+.skill-progress.animate {
+  width: var(--target-width);
+}
+
+.skill-name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Certifications slider */
+.certifications-slider {
+  overflow: hidden;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.certifications-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+}
+
+.certification-card {
+  min-width: 300px;
+  background: rgba(17, 17, 17, 0.8);
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.certification-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.certification-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #00F5FF;
+}
+
+.certification-issuer {
+  font-size: 0.9rem;
+  color: #dc81fa;
+  margin-bottom: 5px;
+}
+
+.certification-date {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+  background: #00F5FF;
+  box-shadow: 0 0 10px #00F5FF;
+}
+
+/* Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navbar */
+.navbar {
+  transition: all 0.3s ease;
+}
+
+/* Form inputs */
+.form-control {
+  background: rgba(17, 17, 17, 0.8);
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  color: white;
+  border-radius: 8px;
+  padding: 12px 15px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #00F5FF;
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
+  background: rgba(17, 17, 17, 0.9);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Neon text classes */
+.neon-text {
+  text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+}
+
+.neon-pink {
+  text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+}
+
+.neon-green {
+  text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
+}
+
+.neon-purple {
+  text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple);
+}
+
+/* Gradient hover effect */
+.gradient-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.gradient-hover:hover::before,
+.gradient-hover.hover::before {
+  left: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+}
