@@ -152,83 +152,24 @@ export default function Contact() {
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="card p-8">
-              <h3 className="text-2xl font-bold mb-6 neon-text">Send a Message</h3>
-              <form onSubmit={handleSubmit}>
-                <div className="mb-4">
-                  <label htmlFor="name" className="block mb-2 text-gray-300">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="form-control"
-                    placeholder="Your Name"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="email" className="block mb-2 text-gray-300">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="form-control"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="message" className="block mb-2 text-gray-300">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="form-control"
-                    placeholder="Your message here..."
-                    rows={5}
-                  ></textarea>
-                </div>
-                
-                {status === 'success' && (
-                  <div className="mb-4 p-3 bg-neon-green/20 border border-neon-green rounded text-neon-green">
-                    Message sent successfully!
-                  </div>
-                )}
-                
-                {status === 'error' && (
-                  <div className="mb-4 p-3 bg-neon-red/20 border border-neon-red rounded text-neon-red">
-                    Failed to send message. Please try again.
-                  </div>
-                )}
-                
-                <button
-                  type="submit"
-                  disabled={status === 'sending'}
-                  className="btn-neon w-full"
-                >
-                  {status === 'sending' ? (
-                    <>
-                      <i className="fas fa-spinner fa-spin mr-2"></i>
-                      Sending...
-                    </>
-                  ) : (
-                    'Send Message'
-                  )}
-                </button>
-              </form>
-            </div>
+                   <div className="col-lg-6">
+            <h3 className="mb-4 neon-green">Send Me a Message</h3>
+            <form action="https://formspree.io/f/mzzvovyb" method="POST">
+              <div className="mb-3">
+                <input type="text" className="form-control" name="name" placeholder="Your Name" required />
+              </div>
+              <div className="mb-3">
+                <input type="email" className="form-control" name="email" placeholder="Your Email" required />
+              </div>
+              <div className="mb-3">
+                <input type="text" className="form-control" name="subject" placeholder="Subject" required />
+              </div>
+              <div className="mb-3">
+                <textarea className="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" className="btn btn-neon">Send Message</button>
+            </form>
+          </div>
           </motion.div>
         </div>
       </div>
