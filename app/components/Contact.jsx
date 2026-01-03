@@ -39,12 +39,20 @@ export default function Contact() {
     setStatus('sending')
 
     try {
-      const response = await fetch('https://formspree.io/f/mzzvovyb', {
+      const response = await fetch('https://formsubmit.co/ajax/dharshinipriya.a426@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          _subject: `Portfolio Contact: ${formData.name}`,
+          _template: 'box',
+          _captcha: 'false',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        }),
       })
 
       if (response.ok) {
