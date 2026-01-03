@@ -290,6 +290,32 @@ textarea.form-control {
   left: 100%;
 }
 
+/* Timeline styles */
+.timeline {
+  position: relative;
+}
+
+.timeline-line {
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.timeline-dot {
+  box-shadow: 0 0 10px var(--neon-blue);
+  animation: dot-pulse 2s infinite;
+}
+
+@keyframes dot-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 245, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 245, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 245, 255, 0);
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .section-title {
