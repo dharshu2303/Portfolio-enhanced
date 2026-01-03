@@ -134,6 +134,15 @@ export default function Contact() {
                 >
                   <i className="fab fa-linkedin text-xl"></i>
                 </a>
+               <a
+                  href="https://medium.com/@dharshinipriya.a426"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full border-2 border-neon-blue flex items-center justify-center text-neon-blue hover:bg-neon-blue hover:text-white transition-all duration-300"
+                >
+                  <i className="fab fa-medium text-xl"></i>
+                </a>
+                
               </div>
             </div>
           </motion.div>
