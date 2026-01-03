@@ -186,7 +186,36 @@ export default function Chatbot() {
                   {sampleQuestions.slice(0, 2).map((question, index) => (
                     <button
                       key={index}
-                      onClick={() => setInput(question)}
+                      onClick={() => {
+                        setInput(question)
+                        // Auto-send the question after a brief delay
+                        setTimeout(() => {
+                          const userMessage = { role: 'user', content: question }
+                          setMessages(prev => [...prev, userMessage])
+                          setInput('')
+                          setIsTyping(true)
+
+                          // Fetch response
+                          fetch('/api/chat', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ message: question }),
+                          })
+                            .then(res => res.json())
+                            .then(data => {
+                              setMessages(prev => [...prev, { role: 'assistant', content: data.message }])
+                              setIsTyping(false)
+                            })
+                            .catch(error => {
+                              console.error('Chat error:', error)
+                              setMessages(prev => [...prev, {
+                                role: 'assistant',
+                                content: getFallbackResponse(question)
+                              }])
+                              setIsTyping(false)
+                            })
+                        }, 100)
+                      }}
                       className="text-xs px-2 py-1 bg-darker-bg border border-neon-blue/30 rounded-full text-gray-300 hover:border-neon-blue transition-colors"
                     >
                       {question}
