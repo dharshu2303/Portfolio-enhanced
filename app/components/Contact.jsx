@@ -140,7 +140,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full border-2 border-neon-blue flex items-center justify-center text-neon-blue hover:bg-neon-blue hover:text-white transition-all duration-300"
                 >
-                  <i className="fab fa-medium text-xl"></i>
+                  <i className="fa-brands fa-medium text-xl"></i>
                 </a>
                 
               </div>
