@@ -331,3 +331,29 @@ textarea.form-control {
     padding: 60px 0;
   }
 }
+
+/* Custom Scrollbar for Chatbot */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(10, 103, 161, 0.3);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(10, 103, 161, 0.5);
+}
+
+.scrollbar-track-transparent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thumb-neon-blue\/30::-webkit-scrollbar-thumb {
+  background: rgba(10, 103, 161, 0.3);
+}
