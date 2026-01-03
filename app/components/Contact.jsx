@@ -39,12 +39,20 @@ export default function Contact() {
     setStatus('sending')
 
     try {
-      const response = await fetch('https://formspree.io/f/mzzvovyb', {
+      const response = await fetch('https://formsubmit.co/ajax/dharshinipriya.a426@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          _subject: `Portfolio Contact: ${formData.name}`,
+          _template: 'box',
+          _captcha: 'false',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        }),
       })
 
       if (response.ok) {
@@ -126,6 +134,15 @@ export default function Contact() {
                 >
                   <i className="fab fa-github text-xl"></i>
                 </a>
+                 <a
+                  href="https://medium.com/@dharshinipriya.a426"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full border-2 border-neon-blue flex items-center justify-center text-neon-blue hover:bg-neon-blue hover:text-white transition-all duration-300"
+                >
+                  <i className="fa-brands fa-medium text-xl"></i>
+                </a>
+
                 <a
                   href="https://www.linkedin.com/in/dharshini-priya-a-74a446290/"
                   target="_blank"
@@ -134,15 +151,6 @@ export default function Contact() {
                 >
                   <i className="fab fa-linkedin text-xl"></i>
                 </a>
-               <a
-                  href="https://medium.com/@dharshinipriya.a426"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full border-2 border-neon-blue flex items-center justify-center text-neon-blue hover:bg-neon-blue hover:text-white transition-all duration-300"
-                >
-                  <i className="fa-brands fa-medium text-xl"></i>
-                </a>
-                
               </div>
             </div>
           </motion.div>
