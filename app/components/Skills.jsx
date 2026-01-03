@@ -28,8 +28,31 @@ export default function Skills() {
     }
   }, [])
 
+  const skillCategories = [
+    {
+      title: 'Web Development',
+      icon: 'fas fa-code',
+      skills: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'MySQL', 'PHP']
+    },
+    {
+      title: 'Backend & Database',
+      icon: 'fas fa-server',
+      skills: ['Node.js', 'Express', 'MySQL', 'PHP', 'REST APIs']
+    },
+    {
+      title: 'Programming Languages',
+      icon: 'fas fa-laptop-code',
+      skills: ['Python', 'Java', 'C', 'C#']
+    },
+    {
+      title: 'Tools & Technologies',
+      icon: 'fas fa-tools',
+      skills: ['VMWare', 'Figma', 'Github', 'Android Studio']
+    }
+  ]
+
   return (
-    <section id="skills" className="py-20 bg-darker-bg" ref={sectionRef}>
+    <section id="skills" className="py-20" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -41,93 +64,32 @@ export default function Skills() {
           <span className="neon-pink animate-neon-pulse-pink">SKILLS</span>
         </motion.h2>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="card p-8 max-w-4xl mx-auto"
-        >
-          {/* WEB DEVELOPMENT */}
-          <h5 className="text-center text-lg font-semibold mb-6 neon-green">
-            <u>WEB DEVELOPMENT</u>
-          </h5>
-          <div className="grid grid-cols-2 gap-6 mb-6">
-            <div className="flex items-center gap-3">
-              <i className="fab fa-html5 text-3xl text-neon-green"></i>
-              <span className="text-white">HTML5</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <i className="fab fa-css3-alt text-3xl text-neon-green"></i>
-              <span className="text-white">CSS3</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <i className="fab fa-js text-3xl text-neon-green"></i>
-              <span className="text-white">JavaScript</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <i className="fab fa-react text-3xl text-neon-green"></i>
-              <span className="text-white">React.js</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <i className="bi bi-filetype-sql text-3xl text-neon-green"></i>
-              <span className="text-white">MYSQL</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <i className="fab fa-php text-3xl text-neon-green"></i>
-              <span className="text-white">PHP</span>
-            </div>
-          </div>
-
-          <hr className="border-neon-blue/30 my-6" />
-
-          {/* PROGRAMMING LANGUAGES */}
-          <h5 className="text-center text-lg font-semibold mb-6 neon-pink">
-            <u>Programming Languages</u>
-          </h5>
-          <div className="grid grid-cols-2 gap-6 mb-6">
-            <div className="flex items-center gap-3">
-              <i className="fab fa-python text-3xl text-neon-pink"></i>
-              <span className="text-white">PYTHON</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <i className="fab fa-java text-4xl text-neon-pink"></i>
-              <span className="text-white">JAVA</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <i className="fas fa-copyright text-3xl text-neon-pink"></i>
-              <span className="text-white">C PROGRAMMING</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="text-3xl text-neon-pink font-bold">C#</span>
-              <span className="text-white">C#</span>
-            </div>
-          </div>
-
-          <hr className="border-neon-blue/30 my-6" />
-
-          {/* TOOLS & FRAMEWORKS */}
-          <h5 className="text-center text-lg font-semibold mb-6 neon-pink">
-            <u>Tools &amp; Frameworks</u>
-          </h5>
-          <div className="grid grid-cols-2 gap-6">
-            <div className="flex items-center gap-3">
-              <i className="fas fa-desktop text-3xl text-neon-pink"></i>
-              <span className="text-white">VMWare</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <i className="fab fa-figma text-4xl text-neon-pink"></i>
-              <span className="text-white">Figma</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <i className="fab fa-github text-3xl text-neon-pink"></i>
-              <span className="text-white">Github</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <i className="fab fa-android text-3xl text-neon-pink"></i>
-              <span className="text-white">Android Studio</span>
-            </div>
-          </div>
-        </motion.div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {skillCategories.map((category, index) => (
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="card p-6 gradient-hover"
+            >
+              <div className="text-center mb-4">
+                <i className={`${category.icon} text-5xl text-neon-blue mb-4 inline-block transition-all duration-300 hover:scale-110`}></i>
+                <h3 className="text-xl font-bold neon-text">{category.title}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2 justify-center">
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 bg-darker-bg/60 border border-neon-blue/30 rounded-full text-sm text-gray-300 hover:border-neon-blue hover:text-neon-blue transition-all duration-300"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )
