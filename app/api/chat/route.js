@@ -89,7 +89,7 @@ export async function POST(request) {
 function getFallbackResponse(query) {
   const lowerQuery = query.toLowerCase()
   
-  if (lowerQuery.includes('service') || lowerQuery.includes('offer') || lowerQuery.includes('hire') || lowerQuery.includes('work')) {
+  if (lowerQuery.includes('service') || lowerQuery.includes('offer') || lowerQuery.includes('work')) {
     return "I offer professional services including:\n\n💻 Full Stack Web Development - Complete web applications with modern tech stack\n👤 Portfolio Creation - Professional portfolios that stand out\n📄 Landing Pages - High-converting landing pages\n🎨 UI/UX Designing - Beautiful and intuitive user interfaces\n\nWould you like to inquire about any of these services?"
   }
   
