@@ -436,7 +436,7 @@ export default function Chatbot() {
                           
                           // Check if it's a service question
                           const lowerQ = question.toLowerCase()
-                          if (lowerQ.includes('service') || lowerQ.includes('hire')) {
+                          if (lowerQ.includes('service')) {
                             setShowServices(true)
                             setMessages(prev => [...prev, {
                               role: 'assistant',
