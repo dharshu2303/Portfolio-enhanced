@@ -4,7 +4,7 @@ export async function POST(request) {
   try {
     const { service, name, email, contact } = await request.json()
 
-    // Validate required fields
+    
     if (!service || !name || !email || !contact) {
       return NextResponse.json(
         { error: 'All fields are required' },
@@ -12,7 +12,6 @@ export async function POST(request) {
       )
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -21,15 +20,6 @@ export async function POST(request) {
       )
     }
 
-    // In a production environment, you would use a service like:
-    // - SendGrid
-    // - Nodemailer with SMTP
-    // - AWS SES
-    // - Resend
-    // - EmailJS
-
-    // For demonstration, we'll use FormSubmit or a similar service
-    // You can also integrate with your backend Express server
 
     const emailContent = {
       to: 'dharshinipriya.a426@gmail.com',
@@ -69,9 +59,6 @@ Sent from Dharshini's Portfolio Chatbot
       `
     }
 
-    // IMPORTANT: Set up your email service
-    // Option 1: Using Resend (recommended - add API key in .env.local)
-    // RESEND_API_KEY=re_your_api_key_here
     
     if (process.env.RESEND_API_KEY) {
       try {
@@ -82,7 +69,7 @@ Sent from Dharshini's Portfolio Chatbot
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            from: 'onboarding@resend.dev', // Use 'onboarding@resend.dev' for testing, or your verified domain
+            from: 'onboarding@resend.dev',
             to: 'dharshinipriya.a426@gmail.com',
             subject: `New Service Inquiry: ${service}`,
             html: emailContent.html
@@ -100,9 +87,6 @@ Sent from Dharshini's Portfolio Chatbot
       }
     }
 
-    // Option 2: Using FormSubmit (no API key needed, but requires activation)
-    // IMPORTANT: Check your email for activation link from FormSubmit
-    // Also check spam folder!
     try {
       const formSubmitResponse = await fetch('https://formsubmit.co/ajax/dharshinipriya.a426@gmail.com', {
         method: 'POST',
