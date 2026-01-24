@@ -239,7 +239,7 @@ export default function Chatbot() {
     "What services do you offer?",
     "Tell me about your projects",
     "What's your tech stack?",
-    "How can I hire you?"
+    "Tell about your experience"
   ]
 
   return (
