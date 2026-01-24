@@ -189,7 +189,7 @@ export default function Chatbot() {
   const getFallbackResponse = (query) => {
     const lowerQuery = query.toLowerCase()
     
-    if (lowerQuery.includes('service') || lowerQuery.includes('offer') || lowerQuery.includes('hire')) {
+    if (lowerQuery.includes('service') || lowerQuery.includes('offer') ) {
       return "I offer professional services including Full Stack Web Development, Portfolio Creation, Landing Pages, and UI/UX Designing. Would you like to know more about any specific service? 💼"
     }
     
@@ -209,7 +209,7 @@ export default function Chatbot() {
       return "My professional journey includes:\n\n💼 Full Stack Developer at Technology Innovation Hub (2025 - Present)\n💼 Full Stack Development Internship at E-Soft Technologies (Dec 2024)\n💼 Python Development Internship at Technohacks Edutech (Jul-Aug 2024)\n\nI've gained hands-on experience in building real-world applications!"
     }
     
-    if (lowerQuery.includes('why') || lowerQuery.includes('choose') || lowerQuery.includes('best')) {
+    if (lowerQuery.includes('why') || lowerQuery.includes('hire') || lowerQuery.includes('choose') || lowerQuery.includes('best')) {
       return "Here's why I stand out: ✨\n\n• Strong technical foundation across full stack\n• Creative problem-solving approach\n• Fast learner who loves new challenges\n• Focus on clean, maintainable code\n• Understanding of UX and business goals\n• Collaborative team player\n\nI bring both technical expertise and genuine passion for technology!"
     }
     
