@@ -135,7 +135,7 @@ export default function Chatbot() {
 
     // Check if user is asking about services
     const lowerInput = currentInput.toLowerCase()
-    if (lowerInput.includes('service') || lowerInput.includes('hire') || lowerInput.includes('work') || lowerInput.includes('offer')) {
+    if (lowerInput.includes('service') || lowerInput.includes('work') || lowerInput.includes('offer')) {
       setIsTyping(false)
       setShowServices(true)
       setMessages(prev => [...prev, {
