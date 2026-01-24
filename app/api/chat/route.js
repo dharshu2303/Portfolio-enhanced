@@ -109,7 +109,7 @@ function getFallbackResponse(query) {
     return "My professional journey includes:\n\n💼 Full Stack Developer at Technology Innovation Hub (2025 - Present)\n💼 Full Stack Development Internship at E-Soft Technologies (December 2024)\n💼 Python Development Internship at Technohacks Edutech (July-August 2024)\n\nI've gained hands-on experience in building real-world applications!"
   }
   
-  if (lowerQuery.includes('why') || lowerQuery.includes('choose') || lowerQuery.includes('best')) {
+  if (lowerQuery.includes('why') || lowerQuery.includes('choose') || lowerQuery.includes('best') || lowerQuery.includes('hire')) {
     return "Here's why I stand out: ✨\n\n• Strong technical foundation across full stack\n• Creative problem-solving approach\n• Fast learner who loves new challenges\n• Focus on clean, maintainable code\n• Understanding of UX and business goals\n• Collaborative team player\n\nI bring both technical expertise and genuine passion for technology!"
   }
   
