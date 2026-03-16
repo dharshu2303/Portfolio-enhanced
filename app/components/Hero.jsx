@@ -40,7 +40,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl mb-8 neon-purple"
             >
-              Full Stack Developer & UI/UX Designer
+              Full Stack Developer
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
