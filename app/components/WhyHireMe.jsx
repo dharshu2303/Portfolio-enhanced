@@ -71,22 +71,13 @@ export default function WhyHireMe() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="card p-8">
-              <h3 className="text-2xl font-bold mb-6 neon-text">Introduction Video</h3>
-              <div className="relative aspect-video bg-darker-bg rounded-lg overflow-hidden border border-neon-blue/30">
-          
-                <div className="absolute inset-0 flex items-center justify-center">
-               
-                </div>
-              
-                <video
-                  controls
-                  className="w-full h-full"
-                  poster="/q_mark.jpg"
-                >
-                  <source src="/hiring.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-               
+             
+              <div className="relative aspect-video bg-darker-bg rounded-lg overflow-hidden border-4 border-neon-blue flex items-center justify-center">
+                <img 
+                  src="/q_mark.jpg" 
+                  alt="Introduction Poster" 
+                  className="object-contain max-h-full max-w-full rounded-lg border-2 border-neon-pink shadow-lg"
+                />
               </div>
             </div>
           </motion.div>

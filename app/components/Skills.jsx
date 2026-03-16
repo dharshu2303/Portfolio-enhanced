@@ -42,7 +42,7 @@ export default function Skills() {
     {
       title: 'Programming Languages',
       icon: 'fas fa-laptop-code',
-      skills: ['Python', 'Java', 'C', 'C#']
+      skills: ['Python', 'Java', 'C', 'C#',"Flutter(Dart)"]
     },
     {
       title: 'Tools & Technologies',
