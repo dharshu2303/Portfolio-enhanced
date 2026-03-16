@@ -32,7 +32,9 @@ export default function About() {
   const skills = [
     { name: 'Web Development', level: '95%' },
     { name: 'Python Development', level: '85%' },
+    {name: 'Mobile App Development', level: '80%' },  
     { name: 'UI/UX Design', level: '75%' }
+
   ]
 
   return (
@@ -57,7 +59,7 @@ export default function About() {
             <h3 className="text-2xl font-bold mb-6 neon-text">Who am I?</h3>
             <p className="mb-4 text-gray-300">
               I'm Dharshini Priya, a B.Tech Information Technology student with a strong interest in Full Stack
-              development, UI/UX design, and Python Development. I enjoy working on projects that combine
+              development, Mobile App Development, UI/UX design, and Python Development. I enjoy working on projects that combine
               creativity with functionality, focusing on building user-friendly and efficient applications.
               Passionate about continuous learning, I actively explore emerging technologies and apply them to
               solve real-world problems.
