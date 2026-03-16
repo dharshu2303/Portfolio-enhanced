@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 
-export default function Skills() {
+export default function WhyHireMe() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef(null)
 
@@ -28,31 +28,31 @@ export default function Skills() {
     }
   }, [])
 
-  const skillCategories = [
+  const reasons = [
     {
-      title: 'Web Development',
+      icon: 'fas fa-rocket',
+      title: 'Fast Learner',
+      description: 'Quick to adapt to new technologies and frameworks'
+    },
+    {
+      icon: 'fas fa-lightbulb',
+      title: 'Problem Solver',
+      description: 'Creative solutions to complex technical challenges'
+    },
+    {
+      icon: 'fas fa-users',
+      title: 'Team Player',
+      description: 'Collaborative approach with excellent communication'
+    },
+    {
       icon: 'fas fa-code',
-      skills: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Bootstrap', 'JQuery']
-    },
-    {
-      title: 'Backend & Database',
-      icon: 'fas fa-server',
-      skills: ['Node.js', 'MySQL', 'PHP', 'REST APIs']
-    },
-    {
-      title: 'Programming Languages',
-      icon: 'fas fa-laptop-code',
-      skills: ['Python', 'Java', 'C', 'C#',"Flutter(Dart)"]
-    },
-    {
-      title: 'Tools & Technologies',
-      icon: 'fas fa-tools',
-      skills: ['VMWare', 'Figma', 'Github', 'Android Studio','Canva']
+      title: 'Clean Code',
+      description: 'Focus on maintainable and efficient code quality'
     }
   ]
 
   return (
-    <section id="skills" className="py-20" ref={sectionRef}>
+    <section id="why-hire-me" className="py-20" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -60,35 +60,62 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="section-title"
         >
-          <span className="neon-text">MY </span>
-          <span className="neon-pink animate-neon-pulse-pink">SKILLS</span>
+          <span className="neon-text">WHY SHOULD YOU </span>
+          <span className="neon-pink animate-neon-pulse-pink">HIRE ME?</span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skillCategories.map((category, index) => (
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="card p-8">
+             
+              <div className="relative aspect-video bg-darker-bg rounded-lg overflow-hidden border-4 border-neon-blue flex items-center justify-center">
+                <img 
+                  src="/q_mark.jpg" 
+                  alt="Introduction Poster" 
+                  className="object-contain max-h-full max-w-full rounded-lg border-2 border-neon-pink shadow-lg"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className="grid grid-cols-2 gap-6">
+              {reasons.map((reason, index) => (
+                <motion.div
+                  key={reason.title}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                  className="card p-6 text-center gradient-hover"
+                >
+                  <i className={`${reason.icon} text-4xl text-neon-blue mb-4`}></i>
+                  <h4 className="font-bold mb-2 neon-green">{reason.title}</h4>
+                  <p className="text-sm text-gray-400">{reason.description}</p>
+                </motion.div>
+              ))}
+            </div>
             <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="card p-6 gradient-hover"
+              transition={{ duration: 0.6, delay: 1 }}
+              className="mt-6 card p-6"
             >
-              <div className="text-center mb-4">
-                <i className={`${category.icon} text-5xl text-neon-blue mb-4 inline-block transition-all duration-300 hover:scale-110 icon-glow`}></i>
-                <h3 className="text-xl font-bold neon-text">{category.title}</h3>
-              </div>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 bg-darker-bg/60 border border-neon-blue/30 rounded-full text-base text-gray-300 hover:border-neon-blue hover:text-neon-blue transition-all duration-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <p className="text-gray-300 leading-relaxed">
+                I bring a unique combination of technical skills, creative problem-solving, 
+                and genuine passion for technology. My projects demonstrate not just coding 
+                ability, but also an understanding of user needs and business goals. I'm 
+                committed to continuous learning and staying current with industry trends.
+              </p>
             </motion.div>
-          ))}
+          </motion.div>
         </div>
       </div>
     </section>
