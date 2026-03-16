@@ -47,6 +47,13 @@ export default function Chatbot() {
       icon: 'fas fa-palette',
       description: 'Beautiful and intuitive user interfaces',
       color: 'from-yellow-400 to-orange-500'
+    },
+    {
+      id: 'mobile',
+      name: 'Mobile App Development',
+      icon: 'fas fa-mobile-alt',
+      description: 'Cross-platform mobile apps for Android & iOS',
+      color: 'from-neon-yellow to-neon-green'
     }
   ]
 
@@ -190,15 +197,15 @@ export default function Chatbot() {
     const lowerQuery = query.toLowerCase()
     
     if (lowerQuery.includes('service') || lowerQuery.includes('offer') ) {
-      return "I offer professional services including Full Stack Web Development, Portfolio Creation, Landing Pages, and UI/UX Designing. Would you like to know more about any specific service? 💼"
+      return "I offer professional services including Full Stack Web Development, Portfolio Creation, Landing Pages, UI/UX Designing, and Mobile App Development. Would you like to know more about any specific service? 💼"
     }
     
     if (lowerQuery.includes('project')) {
-      return "I've worked on several exciting projects! 🚀\n\n• Solar Power Generation Predictor - AI/ML with Flask\n• Drop&Pop - OpenCV hand gesture game\n• Food Delivery Website - UI/UX design\n• Electricity Bill Management System - Full stack app\n\nEach showcases different aspects of my Full Stack Development, AI, and UI/UX skills!"
+      return "Here are some of my latest projects! 🚀\n\n• Solar Power Generation Predictor (AI/ML, Flask)\n• Drop&Pop (OpenCV hand gesture game)\n• Food Delivery Website (UI/UX design)\n• Electricity Bill Management System (Full stack app)\n• Portfolio Website (React/Next.js, Tailwind)\n• MedTech IEEE Research Paper\n\nEach project highlights my skills in Full Stack, AI, and UI/UX!"
     }
     
     if (lowerQuery.includes('skill') || lowerQuery.includes('technology') || lowerQuery.includes('tech stack')) {
-      return "My technical toolkit includes:\n\n💻 Web Dev: HTML5, CSS3, JavaScript, React.js, Next.js, Tailwind CSS\n⚙️ Backend: Node.js, Express, MySQL, PHP\n🐍 Programming: Python, Java, C\n🎨 Design: UI/UX, Canva, Figma\n\nI'm particularly passionate about Full Stack Development and Python!"
+      return "My technical toolkit includes:\n\n💻 Web: HTML5, CSS3, JavaScript, React.js, Next.js, Tailwind CSS\n📱 Mobile: React Native, Flutter basics\n⚙️ Backend: Node.js, Express, MySQL, PHP\n🐍 Programming: Python, Java, C\n🎨 Design: UI/UX, Canva, Figma\n\nI'm passionate about Full Stack, Mobile, and UI/UX!"
     }
     
     if (lowerQuery.includes('education') || lowerQuery.includes('college') || lowerQuery.includes('study')) {
@@ -214,7 +221,7 @@ export default function Chatbot() {
     }
     
     if (lowerQuery.includes('certification') || lowerQuery.includes('course') || lowerQuery.includes('learn')) {
-      return "I'm committed to continuous learning! 📜\n\nKey certifications:\n• Cloud Computing (NPTEL)\n• SQL (Coursera)\n• Oracle AI certifications\n• Full Stack Development\n• UI/UX Design\n• CyberSecurity\n\nAlways staying updated with the latest technologies!"
+      return "I'm committed to continuous learning! 📜\n\nKey certifications:\n• Cloud Computing (NPTEL, Top 5%)\n• SQL (Coursera)\n• Oracle AI\n• Full Stack Development\n• UI/UX Design\n• CyberSecurity\n\nI keep up with the latest tech and best practices!"
     }
     
     if (lowerQuery.includes('contact') || lowerQuery.includes('email') || lowerQuery.includes('reach') || lowerQuery.includes('connect')) {
@@ -225,7 +232,7 @@ export default function Chatbot() {
       return "Hello! I'm Dharshini, a passionate Full Stack Developer and UI/UX Designer. 👋\n\nI love building user-friendly applications and exploring new technologies. What would you like to know about me?"
     }
     
-    return "That's an interesting question! I'd be happy to tell you more about:\n\n• My projects and experience\n• Technical skills and technologies\n• Professional services I offer\n• How to get in touch\n\nWhat interests you most? 🤔"
+    return "That's an interesting question! I'd be happy to tell you more about:\n\n• My projects and experience\n• Technical skills and technologies\n• Certifications & achievements\n• Professional services I offer\n• How to get in touch\n\nWhat interests you most? 🤔"
   }
 
   const handleKeyPress = (e) => {
