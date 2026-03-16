@@ -1,0 +1,122 @@
+
+img, video, canvas, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body, #root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 70px;
+}
+
+.brand-img {
+  max-width: 90px;
+  height: auto;
+}
+
+.profile-img {
+  max-width: 320px;
+  width: 80%;
+  height: auto;
+}
+
+@media (max-width: 991.98px) {
+  #hero .row {
+    flex-direction: column;
+  }
+  #hero .col-lg-6 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .display-5 { font-size: 1.6rem; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.25rem; }
+  body { font-size: 0.95rem; }
+}
+
+
+.particles-wrapper, .canvas-overlay {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.section-title {
+  position: relative;
+  display: block;
+  margin: 0 0 40px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 220px;
+  max-width: 60%;
+  height: 3px;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+  border-radius: 3px;
+  animation: underline-glow 2s infinite alternate;
+}
+@keyframes underline-glow {
+  from {
+    box-shadow: 0 0 5px var(--neon-blue),
+                0 0 10px var(--neon-pink);
+  }
+  to {
+    box-shadow: 0 0 10px var(--neon-blue),
+                0 0 20px var(--neon-pink),
+                0 0 30px var(--neon-purple);
+  }
+}
+
+
+@media (max-width: 767.98px) {
+
+  #hero .d-flex.gap-3 {
+    margin-bottom: 1.5rem; 
+  }
+
+  #contact .row > .col-lg-6 + .col-lg-6 {
+    margin-top: 1.25rem; 
+  }
+
+  #contact .row > .col-lg-6 + .col-lg-6 h3 {
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  #hero .d-flex.gap-3 {
+    margin-bottom: 1rem;
+  }
+  #contact .row > .col-lg-6 + .col-lg-6 {
+    margin-top: 0.5rem;
+  }
+}
+
+.card.p-4.h-100 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 767.98px) {
+  #contact .form-control {
+    margin-bottom: 1rem;
+  }
+}
+
+

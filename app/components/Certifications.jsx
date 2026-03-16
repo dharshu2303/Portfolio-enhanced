@@ -184,7 +184,7 @@ export default function Certifications() {
     return () => clearInterval(interval)
   }, [certifications])
 
-  const visibleCerts = 3 // Number of certificates visible at once
+  const visibleCerts = 3 
   const maxSlide = Math.max(0, certifications.length - visibleCerts)
 
   return (

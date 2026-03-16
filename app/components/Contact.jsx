@@ -39,7 +39,7 @@ export default function Contact() {
     setStatus('sending')
 
     try {
-      const response = await fetch('https://formspree.io/f/mzzvovyb', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,14 +47,18 @@ export default function Contact() {
         body: JSON.stringify(formData),
       })
 
+      const data = await response.json()
+
       if (response.ok) {
         setStatus('success')
         setFormData({ name: '', email: '', message: '' })
         setTimeout(() => setStatus(''), 5000)
       } else {
         setStatus('error')
+        console.error('Error:', data.error)
       }
     } catch (error) {
+      console.error('Form error:', error)
       setStatus('error')
     }
   }
