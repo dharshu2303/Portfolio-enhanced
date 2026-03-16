@@ -1,5 +1,4 @@
 'use client'
-
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
@@ -53,6 +52,7 @@ export default function Certifications() {
             issuer: "Coursera",
             date: "Issued April 2025"
           },
+          
           {
             id: 2,
             image: "/certificates/cc.jpg",
@@ -151,12 +151,13 @@ export default function Certifications() {
             issuer: "Simplilearn",
             date: "Issued January 2025"
           },
+        
           {
             id: 16,
-            image: "/certificates/workshop.jpg",
-            title: "Crack the Code Workshop",
-            issuer: "PSG College of Technology,Coimbatore",
-            date: "Issued March 2025"
+            image: "/certificates/prize.jpg",
+            title: "Codeathon(24 hours)-Runner",
+            issuer: "Prathyusha Engineering College,Chennai",
+            date: "Issued March 2026"
           },
           {
             id: 17,
@@ -164,6 +165,27 @@ export default function Certifications() {
             title: "Introduction to CyberSecurity",
             issuer: "Cisco Academy",
             date: "Issued February 2025"
+          },
+          {
+            id: 18,          
+            image: "/certificates/femyra.jpg",
+            title: "Tech Bird'26-Winner",
+            issuer: "MKCE,Karur",
+            date: "Issued March 2026"
+          },
+          {
+            id: 19,
+            image: "/certificates/microsoft.jpg",
+            title: "Github Copilot Dev Day:Bengaluru",
+            issuer: "Tecchnexus Community & Microsoft",
+            date: "Issued March 2026"
+          },
+          {
+            id: 20,
+            image: "/certificates/workshop.jpg",
+            title: "Crack the Code Workshop",
+            issuer: "PSG College of Technology,Coimbatore",
+            date: "Issued March 2025"
           }
         ])
       } finally {
@@ -184,7 +206,7 @@ export default function Certifications() {
     return () => clearInterval(interval)
   }, [certifications])
 
-  const visibleCerts = 3 
+  const visibleCerts = 3 // Number of certificates visible at once
   const maxSlide = Math.max(0, certifications.length - visibleCerts)
 
   return (

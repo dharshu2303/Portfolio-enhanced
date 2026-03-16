@@ -89,7 +89,16 @@ export default function Projects() {
             title: "OVCare-Ovarian Cancer Early Detection",
             description: "Early detection of ovarian cancer using teporal analysis",
             technologies: ["MYSQL", "PHP", "HTML,CSS,JS","Python","Flask"],
-            link: "/projects/ebms.mp4",
+            link: "https://github.com/dharshu2303/ovcare-c",
+            category: "Full Stack"
+          },
+                           {
+            id: 6,
+            image: "/projects/hms.png",
+            title: "MKCE-Hostel Management System",
+            description: "Smart Hostel Management System designed for our College Hostel",
+            technologies: ["MYSQL", "PHP", "HTML,CSS,JS","JQuery"],
+            link: "https://github.com/dharshu2303/MKCE-Hostel-Management-System",
             category: "Full Stack"
           }
         ])

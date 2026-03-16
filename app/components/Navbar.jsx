@@ -52,7 +52,7 @@ export default function Navbar() {
               />
             </div>
             <span className="ml-2 text-xl font-bold text-white">
-              <span className="neon-text">Dharshini</span>
+              <span className="neon-text">Dharshini Priya A</span>
             </span>
           </Link>
 

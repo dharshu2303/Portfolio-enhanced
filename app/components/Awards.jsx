@@ -30,22 +30,43 @@ export default function Awards() {
 
   const awards = [
     {
-      icon: 'fas fa-user-graduate',
+      icon: 'fas fa-user-graduate', 
       title: 'Ranked Top 5% in NPTEL Cloud Computing Certification Course',
       issuer: 'NPTEL Swayam',
       color: 'neon-pink'
     },
     {
-      icon: 'fas fa-trophy',
+      icon: 'fas fa-star',
       title: 'Awarded Student of the Month at college',
       issuer: 'M Kumarasamy College of Engineering, Karur',
       color: 'neon-green'
     },
     {
-      icon: 'fas fa-medal',
-      title: 'Published a motivation article titled "Stronger than before – the art of resilience, optimism and success"',
-      issuer: 'Medium',
+      icon: 'fas fa-code', 
+      title: 'Secured 2nd Place in Inter-College 24 hours hackathon-Shield and Cash Prize',
+      issuer: 'prathyusha engineering college, Tiruvallur',
       color: 'neon-pink'
+    },
+    {
+      icon: 'fas fa-crown', 
+      title: "Secured First prize in Coding and Debugging challenge and recognized with shield with Title \"Tech Bird'26\"",
+      issuer: 'MKCE, Karur',
+      color: 'neon-pink'
+    },
+    {
+      icon: 'fas fa-question-circle', 
+      title: "Secured Second prize in Technical Quiz at Intra-College Symposium with Cash Prize",
+      issuer: 'MKCE, Karur',
+      color: 'neon-pink'
+    },
+    {
+      icon: 'fas fa-book', 
+      title: "Presented & Published a IEEE Research paper on theme of MEDTECH",
+      color: 'neon-pink'
+    },
+    {
+      icon: 'fas fa-lightbulb', 
+      title: "Internally Shortlisted in SIH 2025 AND MSME 2025 Hackathons",
     }
   ]
 

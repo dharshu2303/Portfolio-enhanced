@@ -4,6 +4,7 @@ export async function POST(request) {
   try {
     const { service, name, email, contact } = await request.json()
 
+    
     if (!service || !name || !email || !contact) {
       return NextResponse.json(
         { error: 'All fields are required' },
@@ -11,7 +12,6 @@ export async function POST(request) {
       )
     }
 
-   
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -59,7 +59,6 @@ Sent from Dharshini's Portfolio Chatbot
       `
     }
 
-
     
     if (process.env.RESEND_API_KEY) {
       try {
@@ -87,7 +86,6 @@ Sent from Dharshini's Portfolio Chatbot
         console.error('Resend error:', error)
       }
     }
-
 
     try {
       const formSubmitResponse = await fetch('https://formsubmit.co/ajax/dharshinipriya.a426@gmail.com', {

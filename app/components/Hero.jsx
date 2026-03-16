@@ -24,7 +24,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center md:text-left"
+            className="text-center"
           >
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -40,13 +40,13 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl mb-8 neon-purple"
             >
-              Full Stack Developer & UI/UX Designer
+              Full Stack Developer
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex gap-4 justify-center md:justify-center flex-wrap"
+              className="flex gap-4 justify-center flex-wrap"
             >
               <button
                 onClick={() => scrollToSection('#projects')}
@@ -67,7 +67,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex justify-center md:justify-center"
+            className="flex justify-center"
           >
             <div className="profile-img relative">
               <Image
