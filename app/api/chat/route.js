@@ -44,10 +44,11 @@ export async function POST(request) {
   try {
     const { message } = await request.json()
 
+    // Check if OpenAI API key is available
     const apiKey = process.env.OPENAI_API_KEY
 
     if (apiKey && apiKey !== 'your_openai_api_key_here') {
-
+      // Use OpenAI API
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -73,7 +74,7 @@ export async function POST(request) {
       }
     }
 
-
+    // Fallback to rule-based responses
     return NextResponse.json({
       message: getFallbackResponse(message)
     })
