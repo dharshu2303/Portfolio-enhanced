@@ -34,7 +34,7 @@ export default function Education() {
       institution: 'M Kumarasamy College of Engineering',
       location: 'Karur, Tamil Nadu',
       period: '2023 - 2027',
-      grade: 'CGPA: 8.3',
+      grade: 'CGPA: 8.2',
       icon: 'fas fa-graduation-cap'
     },
     {
