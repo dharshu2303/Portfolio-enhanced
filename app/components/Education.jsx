@@ -49,7 +49,7 @@ export default function Education() {
 
   const experience = [
     {
-      title: 'Software Developer',
+      title: 'Software Developer Intern',
       company: 'MITA IT Automations Pvt Ltd',
       period: 'March - April 2026',
       description: 'Contributing to the client and consultancy projects and enriching my skills.'  
