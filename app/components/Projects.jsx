@@ -9,6 +9,7 @@ export default function Projects() {
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [showAll, setShowAll] = useState(false)
   const sectionRef = useRef(null)
 
   useEffect(() => {
@@ -160,48 +161,60 @@ export default function Projects() {
             <p className="mt-4">Loading projects...</p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="card overflow-hidden gradient-hover h-full flex flex-col"
-              >
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold mb-3 neon-text">{project.title}</h3>
-                  <p className="text-gray-300 mb-4 flex-1">{project.description}</p>
-                  <div className="mb-4 flex flex-wrap gap-2">
-                    {project.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 bg-darker-bg/60 border border-neon-pink/30 rounded-full text-xs text-gray-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+          <>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.slice(0, showAll ? projects.length : 3).map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="card overflow-hidden gradient-hover h-full flex flex-col"
+                >
+                  <div className="relative h-48 w-full">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                  <a
-                    href={project.link}
-                    target={project.link.startsWith('http') ? '_blank' : '_self'}
-                    rel={project.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                    className="btn-neon text-center block"
-                  >
-                    View Project
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                  <div className="p-6 flex-1 flex flex-col">
+                    <h3 className="text-xl font-bold mb-3 neon-text">{project.title}</h3>
+                    <p className="text-gray-300 mb-4 flex-1">{project.description}</p>
+                    <div className="mb-4 flex flex-wrap gap-2">
+                      {project.technologies.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 bg-darker-bg/60 border border-neon-pink/30 rounded-full text-xs text-gray-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <a
+                      href={project.link}
+                      target={project.link.startsWith('http') ? '_blank' : '_self'}
+                      rel={project.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                      className="btn-neon text-center block"
+                    >
+                      View Project
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            {projects.length > 3 && (
+              <div className="text-center mt-12">
+                <button
+                  onClick={() => setShowAll(!showAll)}
+                  className="btn-neon"
+                >
+                  {showAll ? 'Show Less' : 'Show More'}
+                </button>
+              </div>
+            )}
+          </>
         )}
       </div>
     </section>
