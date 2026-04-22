@@ -189,7 +189,7 @@ export default function Certifications() {
           },
           {
             id: 21,
-            image: "/certificates/microsoft.png",
+            image: "/certificates/cert.png",
             title: "Microsoft Azure AI Fundamentals",
             issuer: "Microsoft Azure",
             date: "Issued April 2025"
