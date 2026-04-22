@@ -186,6 +186,13 @@ export default function Certifications() {
             title: "Crack the Code Workshop",
             issuer: "PSG College of Technology,Coimbatore",
             date: "Issued March 2025"
+          },
+          {
+            id: 21,
+            image: "/certificates/microsoft.png",
+            title: "Microsoft Azure AI Fundamentals",
+            issuer: "Microsoft Azure",
+            date: "Issued April 2025"
           }
         ])
       } finally {

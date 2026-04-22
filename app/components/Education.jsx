@@ -49,9 +49,15 @@ export default function Education() {
 
   const experience = [
     {
+      title: 'Software Developer',
+      company: 'MITA IT Automations Pvt Ltd',
+      period: 'March - April 2026',
+      description: 'Contributing to the client and consultancy projects and enriching my skills.'  
+    },
+    {
       title: 'Full Stack Developer',
       company: 'Technology Innovation Hub',
-      period: '2025 - Present',
+      period: 'August 2025 - April 2026',
       description: 'Contributing to the design and development of robust full-stack applications, with a strong focus on the MERN stack. Collaborating with cross-functional teams to deliver innovative and user-friendly solutions.'
     },
     {
@@ -60,6 +66,7 @@ export default function Education() {
       period: 'December 2024',
       description: 'Developed and deployed a complete full-stack project, integrating front-end and back-end functionalities effectively. Applied industry best practices and learned to optimize performance for real-world scenarios.'
     },
+    
     {
       title: 'Python Development Internship (Remote)',
       company: 'Technohacks Edutech',

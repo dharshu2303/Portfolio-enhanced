@@ -75,6 +75,14 @@ const Skills = () => {
                     <span style={{ color: 'white' }}>C#</span>
                   </div>
                 </div>
+                      <div className="col-6 mb-3">
+                  <div className="d-flex align-items-center">
+                    <i className="me-3 neon-pink">
+                      <h4>Flutter(Dart)</h4>
+                    </i>
+                    <span style={{ color: 'white' }}>Flutter(Dart)</span>
+                  </div>
+                </div>
                 <hr />
                 <h5 className="text-center"><u>Tools & Frameworks</u></h5><br /><br />
                 <div className="col-6 mb-3">

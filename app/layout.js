@@ -1,5 +1,6 @@
 import './globals.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata = {
   title: 'Dharshini Priya A - Full Stack Developer & UI/UX Designer',
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="font-sans">
         {children}
+        <Analytics />
       </body>
     </html>
   )

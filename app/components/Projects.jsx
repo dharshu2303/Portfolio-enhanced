@@ -48,7 +48,7 @@ export default function Projects() {
         // Fallback to static data if backend is not available
         setProjects([
           {
-            id: 1,
+            id: 8,
             image: "/projects/solar power generation predictor.png",
             title: "Solar Power Generation Predictor",
             description: "AI-based Solar power predictor with usage tips",
@@ -57,7 +57,7 @@ export default function Projects() {
             category: "AI/ML"
           },
           {
-            id: 2,
+            id: 7,
             image: "/projects/drop&pop.png",
             title: "Drop&Pop",
             description: "OpenCV implemented Ball game based on hand gesture",
@@ -66,7 +66,7 @@ export default function Projects() {
             category: "Computer Vision"
           },
           {
-            id: 3,
+            id: 9,
             image: "/projects/uiux-food delivery website.png",
             title: "Food Delivery Website",
             description: "UI/UX implemented interactive web app with prototype",
@@ -75,7 +75,7 @@ export default function Projects() {
             category: "UI/UX"
           },
           {
-            id: 4,
+            id: 6,
             image: "/projects/electricity bill management system.png",
             title: "Electricity Bill Management System",
             description: "Generate & manage consumer E-Bills with rewards",
@@ -83,23 +83,50 @@ export default function Projects() {
             link: "/projects/ebms.mp4",
             category: "Full Stack"
           },
-                 {
+          {
             id: 5,
             image: "/projects/ovcare.png",
             title: "OVCare-Ovarian Cancer Early Detection",
             description: "Early detection of ovarian cancer using teporal analysis",
-            technologies: ["MYSQL", "PHP", "HTML,CSS,JS","Python","Flask"],
+            technologies: ["MYSQL", "PHP", "HTML,CSS,JS", "Python", "Flask"],
             link: "https://github.com/dharshu2303/ovcare-c",
             category: "Full Stack"
           },
-                           {
-            id: 6,
+          {
+            id: 3,
             image: "/projects/hms.png",
             title: "MKCE-Hostel Management System",
             description: "Smart Hostel Management System designed for our College Hostel",
-            technologies: ["MYSQL", "PHP", "HTML,CSS,JS","JQuery"],
+            technologies: ["MYSQL", "PHP", "HTML,CSS,JS", "JQuery"],
             link: "https://github.com/dharshu2303/MKCE-Hostel-Management-System",
             category: "Full Stack"
+          },
+          {
+            id: 1,
+            image: "",
+            title: "Yuktha – AI-Based Progressive Web App",
+            description: "AI-powered Multi-Lingual PWA that automatically generates a brand website without requiring user prompts (75+ Users).",
+            technologies: ["Next.js", "React", "Tailwind CSS", "Supabase", "PWA"],
+            link: "https://yuktha.online",
+            category: "Web Creator PWA"
+          },
+          {
+            id: 2,
+            image: "",
+            title: "Seyyon – Emergency Response System",
+            description: "Reliable emergency response platform featuring live danger zone mapping and a web dashboard.",
+            technologies: ["Flutter", "Kotlin", "Firebase", "SQL", "PHP"],
+            link: "#",
+            category: "Mobile App - Safety"
+          },
+          {
+            id: 4,
+            image: "",
+            title: "Vidhana AI - FIR Drafting Mobile App",
+            description: "FIR Drafting Mobile App with FIR Sections using Python.",
+            technologies: ["Flutter", "Python-OCR", "ML", "OpenCV"],
+            link: "#",
+            category: "Mobile App - AI/ML"
           }
         ])
       } finally {
