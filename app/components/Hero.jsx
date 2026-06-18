@@ -1,9 +1,31 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
-
+import { useRef, useState } from 'react'
 export default function Hero() {
+  const videoRef = useRef(null)
+  const [interactionPhase, setInteractionPhase] = useState('idle') // 'idle', 'animating_cursor', 'playing'
+
+  const handleInteraction = () => {
+    if (interactionPhase === 'idle') {
+      setInteractionPhase('animating_cursor')
+    }
+  }
+
+  const startPlaying = () => {
+    setInteractionPhase('playing')
+    if (videoRef.current) {
+      videoRef.current.muted = false
+      videoRef.current.currentTime = 0
+      const playPromise = videoRef.current.play()
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.log("Autoplay with sound prevented by browser:", error)
+        })
+      }
+    }
+  }
+
   const scrollToSection = (sectionId) => {
     const element = document.querySelector(sectionId)
     if (element) {
@@ -32,7 +54,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             >
-              Hi, I'm <span className="neon-pink animate-neon-pulse-pink">DHARSHINI PRIYA A</span>
+              Hi, I'm <span className="neon-pink animate-neon-pulse-pink">DHARSHINI <span className="inline-block relative left-8 md:left-16">PRIYA A</span></span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -69,14 +91,64 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex justify-center"
           >
-            <div className="profile-img relative">
-              <Image
-                src="/photo.jpg"
-                alt="Dharshini Priya"
-                width={300}
-                height={300}
-                className="profile-img"
-                priority
+            <div 
+              className="relative w-full max-w-lg md:max-w-2xl lg:max-w-3xl group cursor-pointer"
+              onClick={handleInteraction}
+            >
+              {/* Thought Bubble Overlay */}
+              <motion.div 
+                initial={{ opacity: 1 }}
+                animate={{ opacity: interactionPhase === 'idle' ? 1 : 0 }}
+                transition={{ duration: 0.5 }}
+                className="absolute top-[15%] md:top-[10%] right-[10%] md:right-[5%] z-10 pointer-events-none flex flex-col items-center"
+              >
+                <motion.div 
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                  className="flex flex-col items-center gap-2"
+                >
+                  <div className="bg-[#0A0A0A]/90 backdrop-blur-md px-6 py-4 rounded-[3rem] border border-[#00F5FF]/80 shadow-[0_0_20px_rgba(0,245,255,0.8)] flex items-center justify-center relative left-4">
+                    <span className="text-[#00F5FF] font-bold tracking-widest uppercase text-xs md:text-sm">Click me to activate</span>
+                  </div>
+                  <div className="w-6 h-6 rounded-full bg-[#00F5FF]/50 border border-[#00F5FF] shadow-[0_0_10px_rgba(0,245,255,0.8)] self-start ml-8"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#00F5FF]/30 border border-[#00F5FF] shadow-[0_0_10px_rgba(0,245,255,0.8)] self-start ml-4"></div>
+                </motion.div>
+              </motion.div>
+
+              {/* Fake Animated Cursor */}
+              {interactionPhase !== 'idle' && (
+                <motion.div
+                  initial={{ y: 300, x: 100, opacity: 0, scale: 1.5 }}
+                  animate={
+                    interactionPhase === 'animating_cursor' 
+                      ? { y: 0, x: 0, opacity: 1, scale: 1 } 
+                      : { opacity: 0, scale: 0.5 }
+                  }
+                  transition={{ type: 'spring', stiffness: 40, damping: 12 }}
+                  onAnimationComplete={() => {
+                    if (interactionPhase === 'animating_cursor') {
+                      setTimeout(() => startPlaying(), 200); // Slight delay for the "click" feel
+                    }
+                  }}
+                  className="absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+                >
+                  <motion.div
+                    animate={interactionPhase === 'animating_cursor' ? { scale: [1, 0.8, 1] } : {}}
+                    transition={{ delay: 0.8, duration: 0.2 }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF00F5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="drop-shadow-[0_0_15px_rgba(255,0,245,0.8)]" style={{ transform: "rotate(-15deg)" }}>
+                      <path d="m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/>
+                      <path d="m13 13 6 6"/>
+                    </svg>
+                  </motion.div>
+                </motion.div>
+              )}
+
+              <video
+                ref={videoRef}
+                src="/vid.mp4"
+                playsInline
+                className="w-full h-auto block mix-blend-screen md:mix-blend-lighten filter brightness-110 contrast-125"
               />
             </div>
           </motion.div>
