@@ -8,7 +8,25 @@ export default function Hero() {
 
   const handleInteraction = () => {
     if (interactionPhase === 'idle') {
+      // Capture user gesture synchronously for mobile browsers
+      if (videoRef.current) {
+        videoRef.current.play().then(() => {
+          videoRef.current.pause()
+        }).catch(err => {
+          console.log("Gesture capture play/pause failed:", err)
+        })
+      }
       setInteractionPhase('animating_cursor')
+    } else if (interactionPhase === 'playing') {
+      if (videoRef.current) {
+        if (videoRef.current.paused) {
+          videoRef.current.play().catch(error => {
+            console.log("Play failed:", error)
+          })
+        } else {
+          videoRef.current.pause()
+        }
+      }
     }
   }
 
@@ -92,7 +110,7 @@ export default function Hero() {
             className="flex justify-center"
           >
             <div 
-              className="relative w-full max-w-lg md:max-w-2xl lg:max-w-3xl group cursor-pointer"
+              className="relative w-full max-w-lg md:max-w-2xl lg:max-w-3xl group cursor-pointer mt-16 md:mt-0"
               onClick={handleInteraction}
             >
               {/* Thought Bubble Overlay */}
@@ -100,7 +118,7 @@ export default function Hero() {
                 initial={{ opacity: 1 }}
                 animate={{ opacity: interactionPhase === 'idle' ? 1 : 0 }}
                 transition={{ duration: 0.5 }}
-                className="absolute top-[15%] md:top-[10%] right-[10%] md:right-[5%] z-10 pointer-events-none flex flex-col items-center"
+                className="absolute top-[-85px] left-1/2 -translate-x-1/2 md:top-[10%] md:right-[5%] md:left-auto md:translate-x-0 md:transform-none z-10 pointer-events-none flex flex-col items-center w-max max-w-[280px] md:max-w-none"
               >
                 <motion.div 
                   animate={{ y: [0, -10, 0] }}
@@ -110,8 +128,8 @@ export default function Hero() {
                   <div className="bg-[#0A0A0A]/90 backdrop-blur-md px-6 py-4 rounded-[3rem] border border-[#00F5FF]/80 shadow-[0_0_20px_rgba(0,245,255,0.8)] flex items-center justify-center relative left-4">
                     <span className="text-[#00F5FF] font-bold tracking-widest uppercase text-xs md:text-sm">Click me to activate</span>
                   </div>
-                  <div className="w-6 h-6 rounded-full bg-[#00F5FF]/50 border border-[#00F5FF] shadow-[0_0_10px_rgba(0,245,255,0.8)] self-start ml-8"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#00F5FF]/30 border border-[#00F5FF] shadow-[0_0_10px_rgba(0,245,255,0.8)] self-start ml-4"></div>
+                  <div className="w-6 h-6 rounded-full bg-[#00F5FF]/50 border border-[#00F5FF] shadow-[0_0_10px_rgba(0,245,255,0.8)] self-start ml-16 md:ml-8"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#00F5FF]/30 border border-[#00F5FF] shadow-[0_0_10px_rgba(0,245,255,0.8)] self-start ml-24 md:ml-4"></div>
                 </motion.div>
               </motion.div>
 
@@ -148,6 +166,12 @@ export default function Hero() {
                 ref={videoRef}
                 src="/vid.mp4"
                 playsInline
+                onEnded={() => {
+                  setInteractionPhase('idle')
+                  if (videoRef.current) {
+                    videoRef.current.currentTime = 0
+                  }
+                }}
                 className="w-full h-auto block mix-blend-screen md:mix-blend-lighten filter brightness-110 contrast-125"
               />
             </div>
