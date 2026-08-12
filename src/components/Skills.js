@@ -131,13 +131,7 @@ const Skills = () => {
                   functionalities effectively. Applied industry best practices and learned to optimize
                   performance for real-world scenarios.</p>
               </div>
-              <div className="timeline-item">
-                <h4>Python Development Internship(Remote)</h4>
-                <p className="text-muted">Technohacks Edutech • July-August 2024</p>
-                <p>Gained hands-on experience in Python programming by working on practical projects,
-                  enhancing problem-solving skills, and applying core concepts to build efficient and
-                  scalable applications.</p>
-              </div>
+            
             </div>
           </div>
         </div>

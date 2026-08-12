@@ -49,6 +49,12 @@ export default function Education() {
 
   const experience = [
     {
+      title: 'AI/ML Intern',
+      company: 'Icanio Technologies Pvt Ltd',
+      period: 'July 2026 - Present',
+      description: 'Working as an AI/ML Engineer Intern at Icanio Technologies Pvt. Ltd., building intelligent AI-driven solutions.'
+    },
+    {
       title: 'Software Developer Intern',
       company: 'MITA IT Automations Pvt Ltd',
       period: 'March - April 2026',
@@ -65,14 +71,8 @@ export default function Education() {
       company: 'E-Soft Technologies, Trichy',
       period: 'December 2024',
       description: 'Developed and deployed a complete full-stack project, integrating front-end and back-end functionalities effectively. Applied industry best practices and learned to optimize performance for real-world scenarios.'
-    },
-    
-    {
-      title: 'Python Development Internship (Remote)',
-      company: 'Technohacks Edutech',
-      period: 'July-August 2024',
-      description: 'Gained hands-on experience in Python programming by working on practical projects, enhancing problem-solving skills, and applying core concepts to build efficient and scalable applications.'
     }
+    
   ]
 
   return (
